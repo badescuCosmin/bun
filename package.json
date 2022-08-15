@@ -1,0 +1,26 @@
+{
+  "name": "bun",
+  "version": "1.0.0",
+  "description": "bun runtime",
+  "main": "bun.js",
+  "scripts": {
+    "servers": "concurrently --kill-others \"bun run bun.js\" \"bun run bun.ts\" \"node node.js\" \"deno run --allow-net deno.js\"",
+    "test-bunjs": "autocannon -c300 -d20 -w8 -l http://127.0.0.1:3000",
+    "test-bunts": "autocannon -c300 -d20 -w8 -l http://127.0.0.1:3080",
+    "test-node": "autocannon -c300 -d20 -w8 -l http://127.0.0.1:8000",
+    "test-deno": "autocannon -c300 -d20 -w8 -l http://127.0.0.1:8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badescuCosmin/bun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/badescuCosmin/bun/issues"
+  },
+  "homepage": "https://github.com/badescuCosmin/bun#readme",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
